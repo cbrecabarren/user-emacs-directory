@@ -125,6 +125,7 @@
 (load-file (concat user-emacs-directory "mods/generic.el"))
 (load-file (concat user-emacs-directory "mods/recentf-ido-find-file.el"))
 (load-file (concat user-emacs-directory "mods/text-scaling.el"))
+(load-file (concat user-emacs-directory "mods/window-movement.el"))
 (load-file (concat user-emacs-directory "mods/ruby.el"))
 (load-file (concat user-emacs-directory "mods/lisp.el"))
 
