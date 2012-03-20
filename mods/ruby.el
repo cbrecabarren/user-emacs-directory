@@ -6,8 +6,8 @@
        )))
 
 
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
+;; (require 'ruby-electric)
+;; (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
 
 (require 'ruby-end)
 (add-hook 'ruby-mode-hook (lambda () (ruby-end-mode t)))
