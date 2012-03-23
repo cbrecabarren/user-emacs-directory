@@ -122,12 +122,10 @@
 (set-default 'cursor-type 'bar)
 
 ;; mods
-(load-file (concat user-emacs-directory "mods/generic.el"))
-(load-file (concat user-emacs-directory "mods/recentf-ido-find-file.el"))
-(load-file (concat user-emacs-directory "mods/text-scaling.el"))
-(load-file (concat user-emacs-directory "mods/window-movement.el"))
-(load-file (concat user-emacs-directory "mods/ruby.el"))
-(load-file (concat user-emacs-directory "mods/lisp.el"))
+(defvar mods-dir (concat user-emacs-directory "mods/"))
+(when (file-exists-p mods-dir)
+  (mapc 'load-file (directory-files mods-dir t "^[^#].*el$")))
+
 
 ;; loads customization file
 (load custom-file 'noerror)
