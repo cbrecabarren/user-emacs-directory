@@ -1,5 +1,5 @@
 ;; sets custom user directory
-(setq user-emacs-directory "/home/cbeltranr/build/emacs-git/user-emacs-directory/")
+(setq user-emacs-directory "/Users/cbeltranr/emacs/user-emacs-directory/")
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
@@ -144,5 +144,21 @@
      (color-theme-initialize)
      (if window-system
 	 (color-theme-cbrecabarren)
-       (color-theme-ir-black))     
+       (color-theme-ir-black))
      ))
+
+;; window size
+(setq default-frame-alist '(
+                            (width . 150)
+                            (height . 35)
+                            ))
+(add-to-list 'default-frame-alist '(alpha . (98 90)))
+
+;; os x specifics
+(when (equal system-type 'darwin)
+  (setq ns-right-option-modifier nil)
+  (setq mac-option-modifier 'super)
+  (setq mac-command-modifier 'meta)
+  (global-set-key (kbd "<home>") 'beginning-of-line)
+  (global-set-key (kbd "<end>") 'end-of-line)
+  )
