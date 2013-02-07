@@ -149,8 +149,8 @@
 
 ;; window size
 (setq default-frame-alist '(
-                            (width . 150)
-                            (height . 35)
+                            (width . 140)
+                            (height . 40)
                             ))
 (add-to-list 'default-frame-alist '(alpha . (98 90)))
 
