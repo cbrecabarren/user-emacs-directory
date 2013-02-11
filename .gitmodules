@@ -1,6 +1,6 @@
-[submodule "plugins/yasnippet"]
-	path = plugins/yasnippet
+[submodule "vendor/yasnippet"]
+	path = vendor/yasnippet
 	url = git://github.com/capitaomorte/yasnippet.git
-[submodule "plugins/rhtml"]
-	path = plugins/rhtml
+[submodule "vendor/rhtml"]
+	path = vendor/rhtml
 	url = git://github.com/eschulte/rhtml.git
