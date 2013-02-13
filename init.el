@@ -162,3 +162,6 @@
   (global-set-key (kbd "<home>") 'beginning-of-line)
   (global-set-key (kbd "<end>") 'end-of-line)
   )
+
+;; ess
+(add-to-list 'load-path (concat user-emacs-directory "vendor/ess/"))
