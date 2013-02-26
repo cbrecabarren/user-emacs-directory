@@ -1,5 +1,5 @@
 ;; sets custom user directory
-(setq user-emacs-directory "/Users/cbeltranr/emacs/user-emacs-directory/")
+(setq user-emacs-directory "/carlos/emacs/user-emacs-directory/")
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
