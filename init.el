@@ -1,5 +1,5 @@
 ;; sets custom user directory
-(setq user-emacs-directory "/home/cbeltranr/build/emacs-git/user-emacs-directory/")
+(setq user-emacs-directory "/Users/cbeltranr/emacs/user-emacs-directory/")
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
@@ -16,8 +16,8 @@
 ;; sets customization file
 (setq custom-file (concat user-emacs-directory "custom.el"))
 
-;; plugins path
-(add-to-list 'load-path (concat user-emacs-directory "plugins/"))
+;; vendor path
+(add-to-list 'load-path (concat user-emacs-directory "vendor/"))
 
 ;; global font lock mode for syntax highlighting
 (global-font-lock-mode 1)
@@ -58,13 +58,13 @@
 (setq mouse-wheel-progressive-speed nil)
 
 ;; rhtml mode
-(add-to-list 'load-path (concat user-emacs-directory "plugins/rhtml/"))
+(add-to-list 'load-path (concat user-emacs-directory "vendor/rhtml/"))
 (require 'rhtml-mode)
 (add-hook 'rhtml-mode-hook
      	  (lambda () (rinari-launch)))
 
 ;; erlang mode
-(add-to-list 'load-path (concat user-emacs-directory "plugins/erlang"))
+(add-to-list 'load-path (concat user-emacs-directory "vendor/erlang"))
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
 (require 'erlang-start)
@@ -81,19 +81,19 @@
 
 
 ;; yasnippet
-(add-to-list 'load-path (concat user-emacs-directory "plugins/yasnippet/"))
+(add-to-list 'load-path (concat user-emacs-directory "vendor/yasnippet/"))
 (require 'yasnippet)
 (setq yas/trigger-key "C-TAB")
 (setq yas/snippet-dirs (concat user-emacs-directory "my_snippets/"))
 (yas/global-mode 1)
 ;; snippet directories
 (yas/load-directory yas/snippet-dirs)
-(yas/load-directory (concat user-emacs-directory "plugins/yasnippet/snippets/"))
+(yas/load-directory (concat user-emacs-directory "vendor/yasnippet/snippets/"))
 ;; trigger key
 (custom-set-variables '(yas/trigger-key "<C-tab>"))
 ;; load snippets
-;; (yas/load-directory "~/.emacs.d/plugins/yasnippets-rails/rails-snippets/")
-;; (yas/load-directory "~/.emacs.d/plugins/textmate-snippets/")
+;; (yas/load-directory "~/.emacs.d/vendor/yasnippets-rails/rails-snippets/")
+;; (yas/load-directory "~/.emacs.d/vendor/textmate-snippets/")
 
 
 ;; fullscreen
@@ -131,7 +131,7 @@
 (load custom-file 'noerror)
 
 ;; color theme
-(add-to-list 'load-path (concat user-emacs-directory "plugins/color-theme-6.6.0/"))
+(add-to-list 'load-path (concat user-emacs-directory "vendor/color-theme-6.6.0/"))
 (require 'color-theme)
 (setq color-theme-is-global t)
 ;; load themes
@@ -144,5 +144,24 @@
      (color-theme-initialize)
      (if window-system
 	 (color-theme-cbrecabarren)
-       (color-theme-ir-black))     
+       (color-theme-ir-black))
      ))
+
+;; window size
+(setq default-frame-alist '(
+                            (width . 140)
+                            (height . 40)
+                            ))
+(add-to-list 'default-frame-alist '(alpha . (98 90)))
+
+;; os x specifics
+(when (equal system-type 'darwin)
+  (setq ns-right-option-modifier nil)
+  (setq mac-option-modifier 'super)
+  (setq mac-command-modifier 'meta)
+  (global-set-key (kbd "<home>") 'beginning-of-line)
+  (global-set-key (kbd "<end>") 'end-of-line)
+  )
+
+;; ess
+(add-to-list 'load-path (concat user-emacs-directory "vendor/ess/"))
