@@ -99,6 +99,9 @@
 ;; fullscreen
 (require 'fullscreen)
 
+;; nero
+(require 'nero)
+
 ;; disable tool bar
 (tool-bar-mode -1)
 ;; disable menu bar
