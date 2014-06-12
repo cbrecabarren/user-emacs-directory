@@ -168,3 +168,5 @@
 
 ;; ess
 (add-to-list 'load-path (concat user-emacs-directory "vendor/ess/"))
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
