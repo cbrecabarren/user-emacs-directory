@@ -29,6 +29,9 @@
 (require 'ido)
 (ido-mode t)
 
+;; For the accents (prefix keys) in 24.3.1
+(require 'iso-transl)
+
 ;; cua-mode
 (cua-mode t)
 (setq cua-auto-tabify-rectangles nil)  ;; Don't tabify after rectangle commands
